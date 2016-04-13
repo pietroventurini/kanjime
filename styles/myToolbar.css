@@ -1,0 +1,8 @@
+md-input-container .md-errors-spacer {
+    display: none;
+}
+
+.my-toolbar {
+    min-height: 64px;
+    max-height: 64px;
+}

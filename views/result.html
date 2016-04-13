@@ -1,0 +1,16 @@
+<h2> Results for '{{keyword}}'</h2>
+  <md-grid-list
+        md-cols-xs="2" md-cols-sm="3" md-cols-md="8" md-cols-gt-md="12"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
+    
+    <md-grid-tile 
+        class="kanji-tile"
+        ng-repeat="word in words"
+        md-colspan-gt-sm="2"
+        md-rowspan-gt-sm="2"
+        ng-click="getDetails(word.kanji.character)">
+      
+        <h1>{{word.kanji.character}}</h1>
+    </md-grid-tile>
+  </md-grid-list>

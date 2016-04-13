@@ -1,0 +1,18 @@
+<h2> Details of: {{character}}</h2>
+<div flex layout-padding class="whiteframe-details" ng-cloak>
+    <md-whiteframe class="md-whiteframe-1dp" layout="row" flex>
+        <div layout="row" layout-xs="column" flex class="details-container">
+            <div layout="column" flex="auto">
+                <span>{{details.kanji.character}}</span><br>
+                <span>Meaning: {{detsails.kanji.meaming.english}}</span>
+                <span>Strokes: {{details.kanji.strokes.count}}</span>
+            </div>
+            <div layout="column" flex="auto">
+                <span>Katakana: {{details.kanji.onyomi.katakana}}</span>
+                <span>Pronunciation: {{details.kanji.onyomi.romaji}}</span>
+                <span>Hiragana: {{details.kanji.kunyomi.hiragana}}</span>
+                <span>Pronunciation: {{details.kanji.kunyomi.romaji}}</span>
+            </div>
+        </div>
+    </md-whiteframe>
+</div>

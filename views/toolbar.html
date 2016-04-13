@@ -1,0 +1,33 @@
+<md-toolbar ng-hide="showSearch" class="md-whiteframe-z2 md-toolbar-tools my-toolbar" layout-padding layout="row" layout-align="start center">
+    <h2><a href="#">KanjiApp</a></h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Search" ng-click="showSearch = !showSearch" >
+        <md-icon class="material-icons">search</md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More" hide-xs>
+        <md-icon class="material-icons">more_vert</md-icon>
+    </md-button>
+</md-toolbar>
+
+<md-toolbar ng-show="showSearch" class="md-whiteframe-z2 my-toolbar" layout="row" layout-align="start center">
+    <form class="md-toolbar-tools" autocomplete="off">
+        <md-button class="md-icon-button md-button"  
+                aria-label="Back" 
+                ng-click="showSearch = !showSearch">
+            <md-icon class="material-icons">arrow_back</md-icon>
+            <md-tooltip>Back</md-tooltip>
+        </md-button>
+        <md-input-container flex>
+            <label>&nbsp</label>
+            <input ng-model="keyword" placeholder="Search" type="search" focus-on="showSearch">
+        </md-input-container>
+        
+        <md-button type="submit" 
+                    class="md-icon-button" 
+                    aria-label="Search" 
+                    ng-click="searchKanji(keyword); showSearch = !showSearch" hide-xs>
+            <md-tooltip>Search</md-tooltip>
+            <md-icon class="material-icons">search</md-icon>
+        </md-button>
+    </form>   
+</md-toolbar>

@@ -1,0 +1,58 @@
+    html body {
+        background-color: #fafafa;
+        color: #4E4E4E;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    md-input-container .md-errors-spacer {
+        display: none;
+    }
+    
+    .kanji-tile {
+        background-color: pink;
+        border-radius: 0 25px 25px 25px;
+        cursor: pointer
+    }
+    
+    .whiteframe-details {
+      /* For breakpoint `-xs` */
+      /* For breakpoint `-sm` */
+      /* For breakpoint `-md` */
+      /* For breakpoint `-gt-md` */ 
+    }
+  .whiteframe-details md-whiteframe {
+    background: #fff;
+    margin: 30px;
+    }
+  @media (max-width: 599px) {
+    .whiteframe-details md-whiteframe {
+      margin: 7px;
+      background-color: #c8e4fa; 
+    }
+    .whiteframe-details md-whiteframe > span {
+      font-size: 1.0em; } }
+  @media (min-width: 600px) and (max-width: 959px) {
+    .whiteframe-details md-whiteframe {
+      margin: 20px;
+      }
+    .whiteframe-details md-whiteframe > span {
+      font-size: 1.0em; } }
+  @media (min-width: 960px) and (max-width: 1279px) {
+    .whiteframe-details md-whiteframe {
+      margin: 20px;
+      background-color: #fcddde; }
+    .whiteframe-details md-whiteframe > span {
+      font-size: 1.0em; } }
+  @media (min-width: 1280px) {
+    .whiteframe-details md-whiteframe {
+      margin: 25px;
+      background-color: #F2FCE2; }
+    .whiteframe-details md-whiteframe > span {
+      font-size: 1.0em; } }
+
+    .details-container {
+        border: 2px solid red;
+    }
+    .details-container > div {
+        border: 2px solid black;
+    }
