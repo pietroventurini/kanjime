@@ -25,6 +25,7 @@
             $scope.character = $stateParams.character;
             Kanji.getDetails($scope.character).then(function(result) {
                 $scope.details = result;
+                $scope.kanjiImage = $scope.details.kanji.strokes.images[$scope.details.kanji.strokes.images.length-1];
             });
         }]);
 })();

@@ -2,16 +2,16 @@
 <div flex layout-padding class="whiteframe-details" ng-cloak>
     <md-whiteframe class="md-whiteframe-1dp" layout="row" flex>
         <div layout="row" layout-xs="column" flex class="details-container">
-            <div layout="column" flex="auto">
-                <span>{{details.kanji.character}}</span><br>
-                <span>Meaning: {{detsails.kanji.meaming.english}}</span>
+            <div layout="column" flex-xs="auto" flex-gt-xs="50">
+                <img ng-src="{{kanjiImage}}" alt="{{character}}" class="kanji-image"><br>
+                <span class="kanji-preview-container"><img ng-repeat="image in details.kanji.strokes.images" ng-src="{{image}}" class="kanji-preview"></span>
+                <span>Meaning: {{details.kanji.meaning.english}}</span>
                 <span>Strokes: {{details.kanji.strokes.count}}</span>
+                <span>Radical: <img ng-src="{{details.radical.image}}" alt="image" class="radical-preview"></span>
             </div>
             <div layout="column" flex="auto">
-                <span>Katakana: {{details.kanji.onyomi.katakana}}</span>
-                <span>Pronunciation: {{details.kanji.onyomi.romaji}}</span>
-                <span>Hiragana: {{details.kanji.kunyomi.hiragana}}</span>
-                <span>Pronunciation: {{details.kanji.kunyomi.romaji}}</span>
+                <span>Katakana: {{details.kanji.onyomi.katakana}} ({{details.kanji.onyomi.romaji}})</span>
+                <span>Hiragana: {{details.kanji.kunyomi.hiragana}} ({{details.kanji.kunyomi.romaji}})</span>
             </div>
         </div>
     </md-whiteframe>
