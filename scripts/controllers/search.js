@@ -23,9 +23,38 @@
         
         .controller('KanjiDetailsCtrl', ['$scope', '$state', 'Kanji', '$stateParams', function($scope, $state, Kanji, $stateParams) {
             $scope.character = $stateParams.character;
+            
             Kanji.getDetails($scope.character).then(function(result) {
                 $scope.details = result;
-                $scope.kanjiImage = $scope.details.kanji.strokes.images[$scope.details.kanji.strokes.images.length-1];
+                $scope.kanjiImages = $scope.details.kanji.strokes.images;
+                $scope.index = $scope.details.kanji.strokes.images.length-1;
+                $scope.kanjiImage = $scope.kanjiImages[$scope.index];
             });
+        }])
+        
+        .controller('KanjiPreviewCtrl', ['$scope', function($scope) {
+            $scope.next = function() {
+                if($scope.index >= $scope.details.kanji.strokes.images.length-1){
+                    $scope.index = 0;
+                }
+                else {
+                    $scope.index++;
+                }
+                $scope.kanjiImage = $scope.kanjiImages[$scope.index];
+            }
+            
+            $scope.previous = function() {
+                if($scope.index <= 0){
+                    $scope.index = $scope.details.kanji.strokes.images.length-1;
+                }
+                else {
+                    $scope.index--;
+                }
+                $scope.kanjiImage = $scope.kanjiImages[$scope.index];
+            }
+            
+            $scope.play = function() {
+                $scope.kanjiVideo = $scope.details.kanji.video.webm;
+            }
         }]);
 })();

@@ -31,6 +31,8 @@ angular.module('kanjiServices', [])
         $http.get('/kanjiServer/getKanjiDetails.php', config).then(function(data){
             var results = data.data;
             result.resolve(results);
+        }, function(error){
+            result.reject("No data from the server");
         });
         return result.promise;
     };

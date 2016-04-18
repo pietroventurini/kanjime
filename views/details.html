@@ -3,8 +3,8 @@
     <md-whiteframe class="md-whiteframe-1dp" layout="row" flex>
         <div layout="row" layout-xs="column" flex class="details-container">
             <div layout="column" flex-xs="auto" flex-gt-xs="50">
-                <img ng-src="{{kanjiImage}}" alt="{{character}}" class="kanji-image"><br>
-                <span class="kanji-preview-container"><img ng-repeat="image in details.kanji.strokes.images" ng-src="{{image}}" class="kanji-preview"></span>
+                <div layout="column"><kanji-preview></kanji-preview></div>
+
                 <span>Meaning: {{details.kanji.meaning.english}}</span>
                 <span>Strokes: {{details.kanji.strokes.count}}</span>
                 <span>Radical: <img ng-src="{{details.radical.image}}" alt="image" class="radical-preview"></span>
