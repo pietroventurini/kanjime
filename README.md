@@ -2,7 +2,7 @@
 This is a search engine for Kanji characters. It searches for kanji related to a keyword given by the user.
 
 ##Some Details
-This is my final project for my last year at secondary school ITIS Castelli (Brescia, Italy).
+This is my first solo project for my last year at secondary school ITIS Castelli (Brescia, Italy).
 It consist in a web app developed during last months using some programming languages new to me.
 
 ##Technologies
