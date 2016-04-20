@@ -1,14 +1,17 @@
-    <img ng-src="{{kanjiImage}}" alt="{{character}}" class="kanji-image">
-    <div layout="row" flex class="myButtons">
-        <div flex="50">
-        <md-button class="md-icon-button md-accent" aria-label="Previous" ng-click="previous()">
-                <md-icon class="material-icons">fast_rewind</md-icon>
-        </md-button>
-        </div>
-        <div flex="50">
-        <md-button class="md-icon-button md-accent" aria-label="Next" ng-click="next()">
-                <md-icon class="material-icons">fast_forward</md-icon>
-        </md-button>
+    <div layout="row" flex layout-align="space-around" ng-hide="kanjiImage!==undefined">
+        <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <div layout="row" flex class="myButtons" ng-show="kanjiImage">
+        <div flex>
+            <md-button class="md-icon-button md-accent" aria-label="Previous" ng-click="previous()">
+                    <md-icon class="material-icons">fast_rewind</md-icon>
+            </md-button>
+            
+            <img ng-src="{{kanjiImage}}" class="kanji-image">
+            
+            <md-button class="md-icon-button md-accent" aria-label="Next" ng-click="next()">
+                    <md-icon class="material-icons">fast_forward</md-icon>
+            </md-button>
         </div>
     </div>
      
