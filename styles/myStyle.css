@@ -1,8 +1,11 @@
-    html body {
+    html, body {
         background-color: #fafafa;
         color: #4E4E4E;
         -webkit-font-smoothing: antialiased;
+        font-family: 'Roboto', sans-serif;
     }
+    
+    
     
     md-input-container .md-errors-spacer {
         display: none;
@@ -50,24 +53,41 @@
       font-size: 1.0em; } }
 
     .details-container {
-        border: 2px solid red;
+       /* border: 2px solid red;*/
     }
     .details-container > div {
-        border: 2px solid black;
+        /*border: 2px solid black;*/
+    }
+    
+    .details-container legend {
+      margin-top: 20px;
+      font-weight: 400;
+    }
+    
+    .details-container span {
+      font-size: 16px;
+      font-weight: 300;
     }
 
     .radical-preview {
-      width: 20px;
-      height: 20px;
+      width: auto;
+      max-width: 50px;
+      height: auto;
+      max-height: 50px;
+      
+    }
+    
+    :focus{
+      outline: none;
+      border: 0;
     }
     
     .kanji-image {
       width: auto;
-      max-width: 100px;
+      max-width: 140px;
       height: auto;
-      max-height: 100px;
-      display: block;
-      margin: auto;
+      max-height: 140px;
+      vertical-align: middle;
     }
     
     .myButtons > div {

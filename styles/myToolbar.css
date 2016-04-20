@@ -6,3 +6,7 @@ md-input-container .md-errors-spacer {
     min-height: 64px;
     max-height: 64px;
 }
+
+.title > a:hover{
+    color: #ffe6ea;
+}
