@@ -1,5 +1,5 @@
 <md-toolbar ng-hide="showSearch" class="md-whiteframe-z2 md-toolbar-tools my-toolbar" layout-padding layout="row" layout-align="start center">
-    <h2><a href="#">KanjiApp</a></h2>
+    <h2 class="title"><a href="#">KanjiApp</a></h2>
     <span flex></span>
     <md-button class="md-icon-button" aria-label="Search" ng-click="showSearch = !showSearch" >
         <md-icon class="material-icons">search</md-icon>
@@ -18,7 +18,7 @@
         </md-button>
         <md-input-container flex>
             <label>&nbsp</label>
-            <input ng-model="keyword" placeholder="Search" type="search" focus-on="showSearch">
+            <input ng-model="keyword" style="color: white" placeholder="Search" type="search" focus-on="showSearch">
         </md-input-container>
         
         <md-button type="submit" 
