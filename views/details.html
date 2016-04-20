@@ -1,17 +1,32 @@
 <h2> Details of: {{character}}</h2>
 <div flex layout-padding class="whiteframe-details" ng-cloak>
-    <md-whiteframe class="md-whiteframe-1dp" layout="row" flex>
-        <div layout="row" layout-xs="column" flex class="details-container">
+    <md-whiteframe layout-padding class="md-whiteframe-10dp" layout="row" flex>
+        <div layout="row" layout-xs="column" flex class="details-container" layout-padding>
             <div layout="column" flex-xs="auto" flex-gt-xs="50">
                 <div layout="column"><kanji-preview></kanji-preview></div>
 
-                <span>Meaning: {{details.kanji.meaning.english}}</span>
-                <span>Strokes: {{details.kanji.strokes.count}}</span>
-                <span>Radical: <img ng-src="{{details.radical.image}}" alt="image" class="radical-preview"></span>
+                <legend>Meaning</legend>
+                    <span>{{details.kanji.meaning.english}}</span>
+                <legend>Strokes</legend>
+                    <span>{{details.kanji.strokes.count}}</span>
+                
+                <legend>Radical</legend>
+                <div layout="row" layout-margin>
+                    <span ><img ng-src="{{details.radical.image}}" alt="image" class="radical-preview"></span>
+                    <div layout="column">
+                        <span>{{details.radical.name.hiragana}}</span>  
+                        <span>{{details.radical.meaning.english}}</span>
+                        <span>{{details.radical.strokes}}</span>
+                    </div> 
+                    <span ng-click="nextHint()"><img ng-src="{{radicalHint}}" class="radical-preview"></span>
+                </div>
+                
             </div>
-            <div layout="column" flex="auto">
-                <span>Katakana: {{details.kanji.onyomi.katakana}} ({{details.kanji.onyomi.romaji}})</span>
-                <span>Hiragana: {{details.kanji.kunyomi.hiragana}} ({{details.kanji.kunyomi.romaji}})</span>
+            <div layout="column" flex="auto" flex-gt-xs="50">
+                <legend>On'yomi</legend>
+                    <span>{{details.kanji.onyomi.katakana}} ({{details.kanji.onyomi.romaji}})</span>
+                <legend>Kun'yomi</legend>
+                    <span>{{details.kanji.kunyomi.hiragana}} ({{details.kanji.kunyomi.romaji}})</span>
             </div>
         </div>
     </md-whiteframe>
