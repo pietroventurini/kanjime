@@ -23,13 +23,26 @@
         
         .controller('KanjiDetailsCtrl', ['$scope', '$state', 'Kanji', '$stateParams', function($scope, $state, Kanji, $stateParams) {
             $scope.character = $stateParams.character;
+            var hintIndex = 0;
             
             Kanji.getDetails($scope.character).then(function(result) {
                 $scope.details = result;
                 $scope.kanjiImages = $scope.details.kanji.strokes.images;
                 $scope.index = $scope.details.kanji.strokes.images.length-1;
                 $scope.kanjiImage = $scope.kanjiImages[$scope.index];
+                $scope.radicalHints = $scope.details.radical.animation;
+                $scope.radicalHint = $scope.radicalHints[hintIndex];
             });
+            
+            $scope.nextHint = function() {
+                if(hintIndex<$scope.radicalHints.length-1) {
+                    hintIndex++;
+                }
+                else {
+                    hintIndex = 0;
+                }
+                $scope.radicalHint = $scope.radicalHints[hintIndex];
+            }
         }])
         
         .controller('KanjiPreviewCtrl', ['$scope', function($scope) {
