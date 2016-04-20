@@ -1,4 +1,9 @@
-<h2> Results for '{{keyword}}'</h2>
+<h2 ng-hide="words!==undefined && words.length==0"> Results for '{{keyword}}'</h2>
+<h2 ng-show="words!==undefined && words.length==0"> No kanji found for '{{keyword}}'</h2>
+
+  <div ng-hide="words!==undefined" layout="row" flex layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+  </div>
   <md-grid-list
         md-cols-xs="2" md-cols-sm="3" md-cols-md="8" md-cols-gt-md="12"
         md-row-height-gt-md="1:1" md-row-height="4:3"
@@ -13,4 +18,6 @@
       
         <h1>{{word.kanji.character}}</h1>
     </md-grid-tile>
+    
+    
   </md-grid-list>
