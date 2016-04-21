@@ -76,6 +76,6 @@
             }
         }])
         .controller('KanjiExamplesCtrl', ['$scope', function($scope) {
-            
+            this.show = true;
         }]);
 })();

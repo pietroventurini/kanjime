@@ -1,4 +1,10 @@
 <div layout="column">
     <legend>Examples</legend>
-    <span ng-repeat="example in details.examples">{{example.japanese}}</span>
+    <div ng-repeat="example in details.examples" 
+            ng-mouseover="show = true" 
+            ng-mouseleave="show = false">
+        
+        <span ng-hide="show">{{example.japanese}}</span>
+        <span ng-show="show">{{example.meaning.english}}</span>
+    </div>
 </div>
