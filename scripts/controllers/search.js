@@ -74,9 +74,8 @@
                 }
                 $scope.kanjiImage = $scope.kanjiImages[$scope.index];
             }
+        }])
+        .controller('KanjiExamplesCtrl', ['$scope', function($scope) {
             
-            $scope.play = function() {
-                $scope.kanjiVideo = $scope.details.kanji.video.webm;
-            }
         }]);
 })();
