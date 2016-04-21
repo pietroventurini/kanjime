@@ -1,8 +1,7 @@
     <div layout="row" flex layout-align="space-around" ng-hide="kanjiImage!==undefined">
         <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
     </div>
-    <div layout="row" flex class="myButtons" ng-show="kanjiImage">
-        <div flex>
+    <div layout="row" layout-align="center center"flex ng-show="kanjiImage">
             <md-button class="md-icon-button md-accent" aria-label="Previous" ng-click="previous()">
                     <md-icon class="material-icons">fast_rewind</md-icon>
             </md-button>
@@ -12,7 +11,6 @@
             <md-button class="md-icon-button md-accent" aria-label="Next" ng-click="next()">
                     <md-icon class="material-icons">fast_forward</md-icon>
             </md-button>
-        </div>
     </div>
      
     <!--<span class="kanji-preview-container"><img ng-repeat="image in details.kanji.strokes.images" ng-src="{{image}}" class="kanji-preview"></span>-->
