@@ -3,7 +3,7 @@
     <md-whiteframe layout-padding class="md-whiteframe-10dp" layout="row" flex>
         <div layout="row" layout-xs="column" flex class="details-container" layout-padding>
             <div layout="column" flex-xs="auto" flex-gt-xs="50">
-                <div layout="column"><kanji-preview></kanji-preview></div>
+                <kanji-preview flex="auto"></kanji-preview>
 
                 <legend>Meaning</legend>
                     <span>{{details.kanji.meaning.english}}</span>
@@ -11,14 +11,14 @@
                     <span>{{details.kanji.strokes.count}}</span>
                 
                 <legend>Radical</legend>
-                <div layout="row" layout-margin>
-                    <span ><img ng-src="{{details.radical.image}}" alt="image" class="radical-preview"></span>
+                <div layout="row" layout-margin class="radical-preview" layout-align="space-around">
+                    <span><img ng-src="{{details.radical.image}}"></span>
                     <div layout="column">
                         <span>{{details.radical.name.hiragana}}</span>  
                         <span>{{details.radical.meaning.english}}</span>
                         <span>{{details.radical.strokes}}</span>
                     </div> 
-                    <span ng-click="nextHint()"><img ng-src="{{radicalHint}}" class="radical-preview"></span>
+                    <span ng-click="nextHint()"><img ng-src="{{radicalHint}}"></span>
                 </div>
                 
             </div>
