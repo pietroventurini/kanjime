@@ -9,7 +9,6 @@
                     <span>{{details.kanji.meaning.english}}</span>
                 <legend>Strokes</legend>
                     <span>{{details.kanji.strokes.count}}</span>
-                
                 <legend>Radical</legend>
                 <div layout="row" layout-margin class="radical-preview" layout-align="space-around">
                     <span><img ng-src="{{details.radical.image}}"></span>
@@ -24,10 +23,23 @@
                 
             </div>
             <div layout="column" flex="auto" flex-gt-xs="50">
-                <legend>On'yomi</legend>
+                <div>
+                    <legend>On'yomi</legend>
                     <span>{{details.kanji.onyomi.katakana}} ({{details.kanji.onyomi.romaji}})</span>
-                <legend>Kun'yomi</legend>
+                </div>
+                <div>
+                    <legend>Kun'yomi</legend>
                     <span>{{details.kanji.kunyomi.hiragana}} ({{details.kanji.kunyomi.romaji}})</span>
+                </div>
+                <div>
+                    <legend>References</legend>
+                    <div layout-xs="column" layout="row" layout-align-gt-xs="space-around">
+                        <span>Grade: {{details.references.grade}}</span>  
+                        <span>Kodansha: {{details.references.kodansha}}</span>
+                        <span>Nelson: {{details.references.classic_nelson}}</span>
+                    </div>
+                </div>
+                <kanji-examples></kanji-examples>
             </div>
         </div>
     </md-whiteframe>

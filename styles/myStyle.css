@@ -76,7 +76,7 @@
       max-height: 50px;
     }
     
-    :focus{
+    :focus {
       outline: none;
       border: 0;
     }
