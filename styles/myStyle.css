@@ -69,12 +69,11 @@
       font-weight: 300;
     }
 
-    .radical-preview {
+    .radical-preview img {
       width: auto;
       max-width: 50px;
       height: auto;
       max-height: 50px;
-      
     }
     
     :focus{
@@ -88,8 +87,4 @@
       height: auto;
       max-height: 140px;
       vertical-align: middle;
-    }
-    
-    .myButtons > div {
-      text-align: center;
     }
