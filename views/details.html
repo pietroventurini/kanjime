@@ -14,7 +14,8 @@
                 <div layout="row" layout-margin class="radical-preview" layout-align="space-around">
                     <span><img ng-src="{{details.radical.image}}"></span>
                     <div layout="column">
-                        <span>{{details.radical.name.hiragana}}</span>  
+                        <span ng-mouseover="showRomaji()" 
+                              ng-mouseleave="showHiragana()">{{pronunciation}}</span>  
                         <span>{{details.radical.meaning.english}}</span>
                         <span>{{details.radical.strokes}}</span>
                     </div> 

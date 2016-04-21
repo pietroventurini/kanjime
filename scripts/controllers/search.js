@@ -32,6 +32,7 @@
                 $scope.kanjiImage = $scope.kanjiImages[$scope.index];
                 $scope.radicalHints = $scope.details.radical.animation;
                 $scope.radicalHint = $scope.radicalHints[hintIndex];
+                $scope.pronunciation = $scope.details.radical.name.hiragana;
             });
             
             $scope.nextHint = function() {
@@ -42,6 +43,14 @@
                     hintIndex = 0;
                 }
                 $scope.radicalHint = $scope.radicalHints[hintIndex];
+            }
+            
+            $scope.showRomaji = function() {
+                $scope.pronunciation = $scope.details.radical.name.romaji;
+            }
+            
+            $scope.showHiragana = function() {
+                $scope.pronunciation = $scope.details.radical.name.hiragana;
             }
         }])
         
