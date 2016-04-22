@@ -20,9 +20,8 @@
                     </div> 
                     <span ng-click="nextHint()"><img ng-src="{{radicalHint}}"></span>
                 </div>
-                
             </div>
-            <div layout="column" flex="auto" flex-gt-xs="50">
+            <div layout="column" flex-xs="auto" flex-gt-xs="50">
                 <div>
                     <legend>On'yomi</legend>
                     <span>{{details.kanji.onyomi.katakana}} ({{details.kanji.onyomi.romaji}})</span>
@@ -39,7 +38,8 @@
                         <span>Nelson: {{details.references.classic_nelson}}</span>
                     </div>
                 </div>
-                <kanji-examples></kanji-examples>
+                
+                <kanji-examples flex="auto"></kanji-examples>
             </div>
         </div>
     </md-whiteframe>

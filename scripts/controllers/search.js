@@ -77,5 +77,13 @@
         }])
         .controller('KanjiExamplesCtrl', ['$scope', function($scope) {
             this.show = true;
+            $scope.aud_play_pause = function(index) {
+                  var myAudio = document.getElementById("audio-"+ index);
+                  if (myAudio.paused) {
+                    myAudio.play();
+                  } else {
+                    myAudio.pause();
+                  }
+                }
         }]);
 })();

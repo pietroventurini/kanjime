@@ -1,10 +1,16 @@
-<div layout="column">
-    <legend>Examples</legend>
+<legend>Examples</legend>
     <div ng-repeat="example in details.examples" 
             ng-mouseover="show = true" 
-            ng-mouseleave="show = false">
+            ng-mouseleave="show = false" layout="row">
         
-        <span ng-hide="show">{{example.japanese}}</span>
-        <span ng-show="show">{{example.meaning.english}}</span>
+        <span ng-hide="show" flex>{{example.japanese}}</span>
+        <span ng-show="show" flex>{{example.meaning.english}}</span>
+            <audio id="audio-{{$index}}" >
+                <source ng-src="{{example.audio.mp3 | trustedAudioUrl}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        <md-button class="md-icon-button md-accent" aria-label="Play Audio" ng-click="aud_play_pause($index)">
+            <md-icon class="material-icons">play_arrow</md-icon>
+        
+        </md-button>
     </div>
-</div>
