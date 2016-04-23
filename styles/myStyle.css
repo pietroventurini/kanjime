@@ -22,6 +22,7 @@
       /* For breakpoint `-sm` */
       /* For breakpoint `-md` */
       /* For breakpoint `-gt-md` */ 
+      height: 1000;
     }
   .whiteframe-details md-whiteframe {
     background: #fff;
