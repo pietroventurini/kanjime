@@ -10,7 +10,9 @@ In order to configure a Java server on cloud9 you need to:
 
 4) Install the following modules and dependencies for apache ```apt-get install libapache2-mod-proxy-html libxml2-dev ```
 
-5) Run the following command to get a list of available Apache modules: ```a2enmod```. Once you are prompted with the choice of modules you desire, you can pass the below line listing the module names:
+5) Run the following command to get a list of available Apache modules: ```a2enmod```. 
+Once you are prompted with the choice of modules you desire, you can pass the below line listing the module names:
+
 `proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html`
     
 Or alternatively, you can run the following commands to enable the modules one by one:
