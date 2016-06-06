@@ -1,15 +1,17 @@
 <html ng-app='kanjiApp'>
     <head>
         <meta charset='UTF-8'>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="theme-color" content="#ab47bc">
         <title>KanjiApp</title>
         
+        <link href="progressivewebapp.json" rel="manifest">
         <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
         <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="styles/myStyle.css" rel="stylesheet">
         <link href="styles/myToolbar.css" rel="stylesheet">
+        <link href="styles/markov.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
         <link href="favicon.ico" rel="icon" type="image/x-icon" /> 
     </head>
@@ -22,11 +24,14 @@
         <script src="bower_components/angular-material/angular-material.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/markov.js"></script>
         <script src="scripts/services/result.js"></script>
+        <script src="scripts/services/markov.js"></script>
         <script src="scripts/directives/focusOn.js"></script>
         <script src="scripts/directives/kanjiPreview.js"></script>
         <script src="scripts/directives/kanjiExamples.js"></script>
         <script src="scripts/filters/trustedAudioUrl.js"></script>
+        
     </body>
       
 </html>

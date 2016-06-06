@@ -5,6 +5,8 @@ angular
     'ui.router',
     'kanjiControllers',
     'kanjiServices',
+    'markovControllers',
+    'markovServices',
     'ngAnimate',
     'ngAria',
     'ngMaterial'
@@ -58,12 +60,23 @@ angular
         }
       })
       
+      .state('root.markov', {
+        parent: 'root',
+        url: '/markov',
+        views: {
+          'content@root': {
+            templateUrl: 'views/markov.html',
+            controller: 'MarkovCtrl'
+          }
+        }
+      })
+      
       $urlRouterProvider.otherwise('/search');
   })
   
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('purple', {
+      .primaryPalette('deep-purple', {
       'default': '400', // by default use shade 400 from the pink palette for primary intentions
       'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
       'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class

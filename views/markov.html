@@ -1,0 +1,32 @@
+<div layout-xs="column" layout-gt-xs="row" layout-padding>
+    <md-whiteframe class="md-whiteframe-2dp whiteframe-details" layout-margin layout-padding flex="auto">
+        <h1>INPUT</h1>
+        <hr>
+        <div layout="column" flex>
+            <form name="markov">
+                <md-input-container class="titles-list">
+                    <md-select placeholder="Use an example" ng-model="title" md-on-open="getTitles()">
+                        <md-option ng-value="title" ng-repeat="title in titles" ng-click="getContent(title)">{{title.name}}</md-option>
+                    </md-select>
+                </md-input-container>
+                
+                <md-input-container class="md-block input-area scroll" flex>
+                    <label>Write something</label>
+                    <textarea ng-model="content" aria-label="Text" rows="17" md-select-on-focus></textarea>
+                </md-input-container>
+            </form>
+            <md-button class="md-accent md-raised md-hue-2" ng-click="markovChain(content)">Markov!</md-button>
+        </div>
+    </md-whiteframe>
+    
+    <md-whiteframe class="md-whiteframe-2dp whiteframe-details" layout-margin layout-padding flex="auto">
+        <h1>RESULT</h1>
+        <hr>
+        <div layout="column" flex>
+            <md-input-container class="md-block scroll markov-container">
+                <textarea ng-model="result" aria-label="Markov Result" rows="20" readonly></textarea>
+            </md-input-container>
+        </div>
+    </md-whiteframe>
+
+</div>

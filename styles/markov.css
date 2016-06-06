@@ -1,0 +1,25 @@
+.titles-list > md-select {
+    min-width: 250px;
+}
+
+.input-area {
+    min-height: 500px;
+    max-height: 500px;
+}
+
+.input-area > textarea {
+    height: 500px;
+    max-height: 500px;
+}
+
+.scroll > textarea {
+    overflow: auto;
+}
+
+.scroll > textarea::-webkit-scrollbar {
+   display: none;
+ }
+ 
+.markov-container > textarea {
+    border-width: 0px;
+}
