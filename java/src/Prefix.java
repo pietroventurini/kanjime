@@ -7,13 +7,13 @@ public class Prefix {
     
     public Prefix(Prefix p) // Prefix constructor: duplicate existing prefix
     {
-       pref = (ArrayList) p.pref.clone();
+       pref = (ArrayList<String>) p.pref.clone();
     }
     
     
     public Prefix(int n, String str) // Costruttore di Prefix: n copie del parametro str ("\n")
     {
-       pref = new ArrayList<String>();
+       pref = new ArrayList<>();
        for (int i = 0; i < n; i++)
             pref.add(str);
     }

@@ -1,18 +1,13 @@
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Reader;
-import java.io.StreamTokenizer;
+import java.io.InputStreamReader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,32 +18,48 @@ import java.util.logging.Logger;
 public class Chain {
     static final int NPREF = 2; // Dimensione del prefisso
     static final String NONWORD = "\n"; // Parola che non possa apparire, come "\n"
-    HashMap<Prefix, ArrayList> statetab = new HashMap<Prefix, ArrayList>(); // chiave = Prefix, valore = suffix Vector    
+    HashMap<Prefix, ArrayList<String>> statetab = new HashMap<>(); // chiave = Prefix, valore = suffix Vector    
     Prefix prefix = new Prefix(NPREF, NONWORD); // Prefisso iniziale    
     Random rand = new Random();
     
 
-    void build(String filePath) throws IOException  // Costruzione pulita: Costruisce tabella degli stati dall'input dell'utente
+    public void build(String filePath) throws IOException  // Costruzione pulita: Costruisce tabella degli stati dall'input dell'utente
     {
-        Reader reader = new FileReader(filePath);
-        StreamTokenizer st = new StreamTokenizer(reader);
-
-        st.resetSyntax(); // remove default rules
-        st.wordChars(0, Character.MAX_VALUE); // turn on all chars
-        st.whitespaceChars(0, ' '); // except up to blank
+        Scanner sc = new Scanner(new InputStreamReader(new FileInputStream(filePath), "utf-8"));
+        sc.useDelimiter("\\s"); //Consider as space also the sequences of spaces
         
-        while (st.nextToken() != st.TT_EOF) //divide l'input dell'utente in base agli spazi e aggiunge ogni parola tramite il metodo add(parola)
-            add(st.sval);      
+        /*st.resetSyntax(); // remove default rules
+        st.wordChars(0, Character.MAX_VALUE); // turn on all chars
+        st.whitespaceChars(0, ' '); // except up to blank*/
+        while (sc.hasNextLine()) {
+            Scanner sc2 = new Scanner(sc.nextLine());
+                while (sc2.hasNext()) {
+                    String s = sc2.next();
+                    add(s);
+                }
+        }
         add(NONWORD); 
-       
+    }
+    
+    public void build(InputStreamReader isr) {
+        Scanner sc = new Scanner(isr);
+        sc.useDelimiter("\\s"); //Consider as space also the sequences of spaces
+        while (sc.hasNextLine()) {
+            Scanner sc2 = new Scanner(sc.nextLine());
+                while (sc2.hasNext()) {
+                    String s = sc2.next();
+                    add(s);
+                }
+        }
+        add(NONWORD); 
     }
     
  
-    void add(String word) // Chain add: aggiunge la parola alla lista dei suffissi e aggiorna il prefisso
+    public void add(String word) // Chain add: aggiunge la parola alla lista dei suffissi e aggiorna il prefisso
     {
-        ArrayList<String> suf = (ArrayList) statetab.get(prefix); //recupero il suffisso del prefisso inserendolo nel vettore suf
+        ArrayList<String> suf = (ArrayList<String>) statetab.get(prefix); //recupero il suffisso del prefisso inserendolo nel vettore suf
         if (suf == null) { //se è ancora vuoto lo inizializzo
-            suf = new ArrayList<String>();
+            suf = new ArrayList<>();
             statetab.put(new Prefix(prefix), suf); //aggiungo alla hashmap la chiave Prefix (['\n']['\n']) e il valore suf [null]
         }
         suf.add(word);
@@ -58,18 +69,16 @@ public class Chain {
     }
     
     
-    void generate(int nwords) // Chain generate: generate output words
+    public String generate(int nwords) // Chain generate: generate output words
     {
-        
-        
-            
+            String response = "";
             Writer writer = null;
         try // Chain generate: generate output words
         {
-            writer = new BufferedWriter(new FileWriter("text-files/Output.txt"));
+            writer = new BufferedWriter(new FileWriter("Output.txt"));
             prefix = new Prefix(NPREF, NONWORD);
             for (int i = 0; i < nwords; i++) {
-                ArrayList<String> s = (ArrayList) statetab.get(prefix);
+                ArrayList<String> s = (ArrayList<String>) statetab.get(prefix);
                 if (s == null) { 
                     System.err.println("Markov: internal error: no state");
                     System.exit(1);
@@ -78,14 +87,14 @@ public class Chain {
                 String suf = (String) s.get(r);
                 if (suf.equals(NONWORD))
                     break;
-                System.out.println(suf);
+                    
+                response += suf + " ";
                 writer.write(suf + " ");
-                
-               
                 
                 prefix.pref.remove(0);
                 prefix.pref.add(suf);
             }
+            
         } catch (IOException ex) {
             Logger.getLogger(Chain.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -95,6 +104,8 @@ public class Chain {
                 Logger.getLogger(Chain.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        return response;
 
     } 
 }
