@@ -10,3 +10,8 @@ md-input-container .md-errors-spacer {
 .title > a:hover{
     color: #ffe6ea;
 }
+
+.title > a:focus {
+    outline: none;
+    border: 0;
+}

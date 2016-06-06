@@ -1,5 +1,5 @@
-(function() {
-    
+'use strict';
+
     angular.module('kanjiControllers', [])
         .controller('KanjiFinderCtrl', ['$scope', 'Kanji', '$state', '$stateParams', '$filter', function($scope, Kanji, $state, $stateParams, $filter) {
             $scope.searchKanji = function(keyword) {
@@ -86,4 +86,3 @@
                   }
                 }
         }]);
-})();

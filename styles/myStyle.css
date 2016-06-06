@@ -5,25 +5,21 @@
         font-family: 'Roboto', sans-serif;
     }
     
-    
-    
-    md-input-container .md-errors-spacer {
-        display: none;
-    }
-    
     .kanji-tile {
-        background-color: pink;
-        border-radius: 0 25px 25px 25px;
-        cursor: pointer
+        background-color: #F48FB1;
+        border-radius: 0px;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
     }
     
     .whiteframe-details {
       /* For breakpoint `-xs` */
       /* For breakpoint `-sm` */
       /* For breakpoint `-md` */
-      /* For breakpoint `-gt-md` */ 
-      height: 1000;
+      /* For breakpoint `-gt-md` */
     }
+    
   .whiteframe-details md-whiteframe {
     background: #fff;
     margin: 30px;
@@ -52,13 +48,6 @@
      }
     .whiteframe-details md-whiteframe > span {
       font-size: 1.0em; } }
-
-    .details-container {
-       /* border: 2px solid red;*/
-    }
-    .details-container > div {
-        /*border: 2px solid black;*/
-    }
     
     .details-container legend {
       margin-top: 20px;
@@ -88,4 +77,8 @@
       height: auto;
       max-height: 140px;
       vertical-align: middle;
+    }
+    
+    .results-container {
+      padding: 15px;
     }
